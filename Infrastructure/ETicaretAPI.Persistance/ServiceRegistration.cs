@@ -15,8 +15,10 @@ namespace ETicaretAPI.Persistance
   {
     public static void AddPersistanceServices(this IServiceCollection services)
     {
-      services.AddDbContext<ETicaretAPIDbContext>(options => options.UseNpgsql("User ID=postgres;Password=postgrespw;Host=localhost;Port=49154;Database=ETicaretApiDB;"));
+      //services.AddDbContext<ETicaretAPIDbContext>(options => options.UseNpgsql("User ID=pgadmin;Password=WvYYurkWfk9EuEfQ;Host=localhost;Port=5435;Database=ETicaretApiDB;"));
+      services.AddDbContext<ETicaretAPIDbContext>(options => options.UseSqlServer("Server = localhost\\SQLEXPRESS; Database = ETicaretApiDB; Trusted_Connection= True;"));
       //Pooling = true; Min Pool Size = 0; Max Pool Size = 100; Connection Lifetime = 0;
+      
     }
   }
 }
